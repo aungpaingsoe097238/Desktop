@@ -1,11 +1,30 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import ScreenModel from "../components/windows/ScreenModel.vue";
 
 const windows = ref([]);
 
+/*
+ * Show Screen
+ */
 const handleShowWindow = (window) => {
   windows.value.push(window);
+};
+
+/**
+ * Filter dupclicate array value
+ */
+const uniqueWindows = computed(() => {
+  let uniqueSet = new Set(windows.value);
+  let uniqueArray = Array.from(uniqueSet);
+  return uniqueArray;
+});
+
+/*
+ * Close Screen
+ */
+const close = (index) => {
+  windows.value = windows.value.filter((window, i) => i !== index);
 };
 </script>
 
@@ -45,8 +64,8 @@ const handleShowWindow = (window) => {
     </div>
 
     <!-- Windows -->
-    <div v-for="(window, index) in windows" :key="index">
-      <ScreenModel :window="window" :index="index" />
+    <div v-for="(window, index) in uniqueWindows" :key="index">
+      <ScreenModel :window="window" :index="index" @close="close" />
     </div>
   </div>
 </template>

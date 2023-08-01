@@ -2,11 +2,13 @@
 import { defineProps } from "vue";
 
 const { index } = defineProps({
-    index : Number
+  index: Number,
 });
-
 </script>
 
 <template>
-  <div>Contact {{ index }}</div>
+  <div class="bg-white rounded-sm border border-red-600 p-1">
+    <slot name="header"></slot>
+    <div class="">Contact {{ index }}</div>
+  </div>
 </template>
