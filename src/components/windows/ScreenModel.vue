@@ -4,13 +4,15 @@ import { useDraggable } from "@vueuse/core";
 import About from "./screens/About.vue";
 import Portfolio from "./screens/Portfolio.vue";
 import Contact from "./screens/Contact.vue";
-import ScreenHeader from '../reusables/ScreenHeader.vue';
+import Skill from "./screens/Skill.vue";
+import ScreenHeader from "../reusables/ScreenHeader.vue";
+import { useScreenStore } from "../../features/pinia/screen";
 
-const emit = defineEmits(["close"]);
+const screenStore = useScreenStore();
 
 const { index } = defineProps({
   index: Number,
-  window: String,
+  screen: String,
 });
 
 const el = ref<HTMLElement | null>(null);
@@ -21,46 +23,67 @@ const { x, y, style } = useDraggable(el, {
 });
 
 const handleCloseScreen = (index) => {
-  emit("close", index);
+  screenStore.removeScreen(index);
 };
 </script>
 
 <template>
-  <div ref="el" class="fixed w-full lg:w-[50%]" :class="`z-[${index}00]`" :style="style">
+  <div
+    ref="el"
+    class="fixed w-full lg:w-[50%]"
+    :class="`z-[${index}00]`"
+    :style="style"
+  >
     <div>
-      <Portfolio v-if="window === 'portfolio'" :index="index">
+      <Portfolio v-if="screen === 'portfolio'" :index="index">
         <template #header>
           <ScreenHeader>
             <template #close-btn>
-              <div @click="handleCloseScreen(index)" class=" cursor-pointer border-2 border-red-600 w-[35px]"></div>
+              <div
+                @click="handleCloseScreen(index)"
+                class="cursor-pointer border-2 border-red-600 w-[35px]"
+              ></div>
             </template>
-            <template #title>
-              Portfolio
-            </template>
+            <template #title> Portfolio </template>
           </ScreenHeader>
         </template>
       </Portfolio>
-      <About v-if="window === 'about'" :index="index">
+      <About v-if="screen === 'about'" :index="index">
         <template #header>
           <ScreenHeader>
             <template #close-btn>
-              <div @click="handleCloseScreen(index)" class=" cursor-pointer border-2 border-red-600 w-[35px]"></div>
+              <div
+                @click="handleCloseScreen(index)"
+                class="cursor-pointer border-2 border-red-600 w-[35px]"
+              ></div>
             </template>
-            <template #title>
-              About
-            </template>
+            <template #title> About </template>
           </ScreenHeader>
         </template>
       </About>
-      <Contact v-if="window === 'contact'" :index="index">
+      <skill v-if="screen === 'skill'" :index="index">
         <template #header>
           <ScreenHeader>
             <template #close-btn>
-              <div @click="handleCloseScreen(index)" class=" cursor-pointer border-2 border-red-600 w-[35px]"></div>
+              <div
+                @click="handleCloseScreen(index)"
+                class="cursor-pointer border-2 border-red-600 w-[35px]"
+              ></div>
             </template>
-            <template #title>
-              Contact 
+            <template #title> Skill </template>
+          </ScreenHeader>
+        </template>
+      </skill>
+      <Contact v-if="screen === 'contact'" :index="index">
+        <template #header>
+          <ScreenHeader>
+            <template #close-btn>
+              <div
+                @click="handleCloseScreen(index)"
+                class="cursor-pointer border-2 border-red-600 w-[35px]"
+              ></div>
             </template>
+            <template #title> Contact </template>
           </ScreenHeader>
         </template>
       </Contact>

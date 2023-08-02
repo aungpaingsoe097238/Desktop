@@ -1,9 +1,11 @@
 <script setup>
 import { defineProps } from "vue";
+import { useScreenStore } from "../../../features/pinia/screen";
+
+const screenStore = useScreenStore();
 const { index } = defineProps({
   index: Number,
 });
-
 </script>
 
 <template>
