@@ -5,6 +5,7 @@ import About from "./screens/About.vue";
 import Portfolio from "./screens/Portfolio.vue";
 import Contact from "./screens/Contact.vue";
 import Skill from "./screens/Skill.vue";
+import PortfolioDetail from "./screens/PortfolioDetail.vue";
 import ScreenHeader from "../reusables/ScreenHeader.vue";
 import { useScreenStore } from "../../features/pinia/screen";
 
@@ -14,6 +15,8 @@ const { index } = defineProps({
   index: Number,
   screen: String,
 });
+
+const emit = defineEmits(["portfilioDetail"]);
 
 const el = ref<HTMLElement | null>(null);
 
@@ -25,6 +28,13 @@ const { x, y, style } = useDraggable(el, {
 const handleCloseScreen = (index) => {
   screenStore.removeScreen(index);
 };
+
+/**
+ * Portfolio Detail
+ */
+const portfilioDetail = (portfolio) => {
+  emit("portfilioDetail", portfolio);
+};
 </script>
 
 <template>
@@ -35,7 +45,11 @@ const handleCloseScreen = (index) => {
     :style="style"
   >
     <div>
-      <Portfolio v-if="screen === 'portfolio'" :index="index">
+      <Portfolio
+        v-if="screen === 'portfolio'"
+        :index="index"
+        @portfilioDetail="portfilioDetail"
+      >
         <template #header>
           <ScreenHeader>
             <template #close-btn>
@@ -87,6 +101,19 @@ const handleCloseScreen = (index) => {
           </ScreenHeader>
         </template>
       </Contact>
+      <PortfolioDetail v-if="screen === 'portfolio-detail'" :index="index">
+        <template #header>
+          <ScreenHeader>
+            <template #close-btn>
+              <div
+                @click="handleCloseScreen(index)"
+                class="cursor-pointer border-2 border-red-600 w-[35px]"
+              ></div>
+            </template>
+            <template #title> {{ screenStore.getScreenData?.name }} </template>
+          </ScreenHeader>
+        </template>
+      </PortfolioDetail>
     </div>
   </div>
 </template>

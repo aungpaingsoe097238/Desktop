@@ -1,10 +1,8 @@
 <script setup>
 import { defineProps, ref } from "vue";
-import { useScreenStore } from "../../../features/pinia/screen";
 
-const screenStore = useScreenStore();
 const portfolios = ref([
-  { name: "Folder1" },
+  { name: "Folder1", text : 'text', image : '' },
   { name: "Folder2" },
   { name: "Folder3" },
   { name: "Folder4" },
@@ -17,10 +15,6 @@ const portfolios = ref([
 const { index } = defineProps({
   index: Number,
 });
-
-const handlePortfolioDetail = (portfolio, index) => {
-  screenStore.setPortfolioDetail(portfolio);
-};
 </script>
 
 <template>
@@ -34,7 +28,7 @@ const handlePortfolioDetail = (portfolio, index) => {
       >
         <div
           class="text-center m-2 cursor-pointer hover:bg-slate-300"
-          @click="handlePortfolioDetail(portfolio, index)"
+          @click="$emit('portfilioDetail', portfolio)"
         >
           <img
             src="../../../assets/images/porpleicon4.png"
@@ -44,6 +38,5 @@ const handlePortfolioDetail = (portfolio, index) => {
         </div>
       </div>
     </div>
-
   </div>
 </template>

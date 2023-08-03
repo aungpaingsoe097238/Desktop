@@ -8,6 +8,6 @@ const { index } = defineProps({
 <template>
   <div class="bg-white rounded-sm border border-red-600 p-1">
     <slot name="header"></slot>
-    <div class="">About {{ index }}</div>
+    <div class="">portfilioDetail {{ index }}</div>
   </div>
 </template>

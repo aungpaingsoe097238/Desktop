@@ -3,6 +3,7 @@ import { ref, computed } from "vue";
 
 export const useScreenStore = defineStore("screen", () => {
   const screens = ref([]);
+  const screenData = ref({});
 
   const getScreens = computed(() => {
     let uniqueSet = new Set(screens.value);
@@ -10,10 +11,13 @@ export const useScreenStore = defineStore("screen", () => {
     return uniqueArray;
   });
 
-  const setScreens = (screen) => {
+  const getScreenData = computed(() => screenData.value);
+
+  const setScreens = (screen, data) => {
     const findSameScreen = screens.value.find((item) => item === screen);
     if (!findSameScreen) {
       screens.value.push(screen);
+      screenData.value = data;
     } else {
       let elementToMove = findSameScreen;
       let newPosition = screens.value.length;
@@ -30,7 +34,8 @@ export const useScreenStore = defineStore("screen", () => {
   return {
     screens,
     getScreens,
+    getScreenData,
     setScreens,
-    removeScreen
+    removeScreen,
   };
 });

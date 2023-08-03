@@ -13,6 +13,9 @@ const handleShowScreen = (screen) => {
   screenStore.setScreens(screen);
 };
 
+const portfilioDetail = (portfolio) => {
+  screenStore.setScreens("portfolio-detail", portfolio);
+};
 </script>
 
 <template>
@@ -68,8 +71,11 @@ const handleShowScreen = (screen) => {
 
     <!-- Screens model -->
     <div v-for="(screen, index) in screens" :key="index">
-      <ScreenModel :screen="screen" :index="index" />
+      <ScreenModel
+        :screen="screen"
+        :index="index"
+        @portfilioDetail="portfilioDetail"
+      />
     </div>
-    
   </div>
 </template>
