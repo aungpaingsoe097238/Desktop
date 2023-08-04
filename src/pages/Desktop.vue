@@ -1,20 +1,27 @@
 <script setup>
-import { computed } from "vue";
-import ScreenModel from "../components/windows/ScreenModel.vue";
+import { computed, ref } from "vue";
 import { useScreenStore } from "../features/pinia/screen";
-
+import draggable from "../components/reusables/draggable.vue";
+import portfolio from "../components/screens/portfolio.vue";
+import portfolioDetial from "../components/screens/portfolioDetail.vue";
+import about from "../components/screens/about.vue";
+import skill from "../components/screens/skill.vue";
+import contact from "../components/screens/contact.vue";
 const screenStore = useScreenStore();
-const screens = computed(() => screenStore.getScreens);
+const windows = computed(() => screenStore.getWindows);
 
-/*
- * Show Screen
+/**
+ * added window to store
  */
-const handleShowScreen = (screen) => {
-  screenStore.setScreens(screen);
+const handleShowWindow = (window, data = null) => {
+  screenStore.setWindow(window, data);
 };
 
-const portfilioDetail = (portfolio) => {
-  screenStore.setScreens("portfolio-detail", portfolio);
+/*
+ * show portfolio detail
+ */
+const showPortfolioDetail = (data) => {
+  screenStore.setWindow(`portfolio-detail${data.index}`, data);
 };
 </script>
 
@@ -24,7 +31,7 @@ const portfilioDetail = (portfolio) => {
       <div class="flex flex-col gap-2 mt-5">
         <div
           class="flex flex-col text-center justify-center gap-2 hover:bg-slate-200 p-2 cursor-pointer"
-          @click="handleShowScreen('portfolio')"
+          @click="handleShowWindow('portfolio')"
         >
           <img
             src="../assets/images/porpleicon1-p-500.png"
@@ -35,18 +42,18 @@ const portfilioDetail = (portfolio) => {
         </div>
         <div
           class="flex flex-col text-center justify-center gap-2 hover:bg-slate-200 p-2 cursor-pointer"
-          @click="handleShowScreen('about')"
+          @click="handleShowWindow('about')"
         >
           <img
             src="../assets/images/porpleicon1-p-500.png"
             class="w-[60px] mx-auto"
             alt=""
           />
-          <div class="px-3 bg-slate-100 text-rose-700">About Me</div>
+          <div class="px-3 bg-slate-100 text-rose-700">About</div>
         </div>
         <div
           class="flex flex-col text-center justify-center gap-2 hover:bg-slate-200 p-2 cursor-pointer"
-          @click="handleShowScreen('skill')"
+          @click="handleShowWindow('skill')"
         >
           <img
             src="../assets/images/porpleicon1-p-500.png"
@@ -57,7 +64,7 @@ const portfilioDetail = (portfolio) => {
         </div>
         <div
           class="flex flex-col text-center justify-center gap-2 hover:bg-slate-200 p-2 cursor-pointer"
-          @click="handleShowScreen('contact')"
+          @click="handleShowWindow('contact')"
         >
           <img
             src="../assets/images/porpleicon1-p-500.png"
@@ -69,13 +76,32 @@ const portfilioDetail = (portfolio) => {
       </div>
     </div>
 
-    <!-- Screens model -->
-    <div v-for="(screen, index) in screens" :key="index">
-      <ScreenModel
-        :screen="screen"
-        :index="index"
-        @portfilioDetail="portfilioDetail"
-      />
-    </div>
+    <draggable v-for="(window, index) in windows" :key="index" :index="index">
+      <template #window>
+        <portfolio
+          v-if="window.window === 'portfolio'"
+          @portfolioDetail="showPortfolioDetail"
+        ></portfolio>
+        <about v-if="window.window === 'about'"></about>
+        <skill v-if="window.window === 'skill'"></skill>
+        <contact v-if="window.window === 'contact'"></contact>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail0'"
+          index="0"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail1'"
+          index="1"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail2'"
+          index="2"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail3'"
+          index="3"
+        ></portfolioDetial>
+      </template>
+    </draggable>
   </div>
 </template>

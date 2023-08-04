@@ -2,40 +2,32 @@ import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 
 export const useScreenStore = defineStore("screen", () => {
-  const screens = ref([]);
-  const screenData = ref({});
+  const windows = ref([]);
 
-  const getScreens = computed(() => {
-    let uniqueSet = new Set(screens.value);
-    let uniqueArray = Array.from(uniqueSet);
-    return uniqueArray;
-  });
+  /**
+   * get all windows
+   */
+  const getWindows = computed(() => windows.value);
 
-  const getScreenData = computed(() => screenData.value);
-
-  const setScreens = (screen, data) => {
-    const findSameScreen = screens.value.find((item) => item === screen);
-    if (!findSameScreen) {
-      screens.value.push(screen);
-      screenData.value = data;
-    } else {
-      let elementToMove = findSameScreen;
-      let newPosition = screens.value.length;
-      let indexToMove = screens.value.indexOf(elementToMove);
-      screens.value.splice(indexToMove, 1);
-      screens.value.splice(newPosition, 0, elementToMove);
+  /**
+   * added windows
+   */
+  const setWindow = (window, data) => {
+    const findExistingWindow = windows.value.find((el) => el.window === window);
+    if (!findExistingWindow) {
+      windows.value.push({
+        window: window,
+        data: data,
+      });
     }
   };
 
-  const removeScreen = (index) => {
-    screens.value = screens.value.filter((item, i) => i !== index);
+  /**
+   * close window
+   */
+  const removeWidow = (window) => {
+    windows.value = windows.value.filter((item) => item.window !== window);
   };
 
-  return {
-    screens,
-    getScreens,
-    getScreenData,
-    setScreens,
-    removeScreen,
-  };
+  return { windows, getWindows, setWindow, removeWidow };
 });
