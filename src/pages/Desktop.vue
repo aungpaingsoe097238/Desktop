@@ -76,7 +76,7 @@ const showPortfolioDetail = (data) => {
       </div>
     </div>
 
-    <draggable v-for="(window, index) in windows" :key="index" :index="index">
+    <draggable v-for="(window, index) in windows" :key="index" :index="index" >
       <template #window>
         <portfolio
           v-if="window.window === 'portfolio'"

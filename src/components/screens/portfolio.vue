@@ -17,6 +17,7 @@ const folders = ref([
 const handleShowPortfolioDetail = (folder, index) => {
   screenStore.setWindow(`portfolio-detail${index}`, folder);
 };
+
 </script>
 
 <template>
