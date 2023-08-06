@@ -17,12 +17,11 @@ const folders = ref([
 const handleShowPortfolioDetail = (folder, index) => {
   screenStore.setWindow(`portfolio-detail${index}`, folder);
 };
-
 </script>
 
 <template>
   <div
-    class="w-[100vh] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-red-600"
+    class="w-[50vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-red-600"
   >
     <windowHeader title="Portfolio" window="portfolio"></windowHeader>
     <div class="flex justify-center my-4">

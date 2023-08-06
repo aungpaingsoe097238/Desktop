@@ -50,8 +50,7 @@ const handleCloseWindow = () => {
       </div>
     </div>
     <div class="flex flex-col w-full justify-between gap-1 mt-2">
-      <div class="border-2 border-red-600"></div>
-      <div class="border-2 border-red-600"></div>
+      <div class="border border-red-600"></div>
     </div>
   </div>
 </template>

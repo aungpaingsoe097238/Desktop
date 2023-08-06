@@ -7,6 +7,7 @@ import portfolioDetial from "../components/screens/portfolioDetail.vue";
 import about from "../components/screens/about.vue";
 import skill from "../components/screens/skill.vue";
 import contact from "../components/screens/contact.vue";
+import info from "../components/reusables/info.vue";
 const screenStore = useScreenStore();
 const windows = computed(() => screenStore.getWindows);
 
@@ -76,7 +77,9 @@ const showPortfolioDetail = (data) => {
       </div>
     </div>
 
-    <draggable v-for="(window, index) in windows" :key="index" :index="index" >
+    <info></info>
+
+    <draggable v-for="(window, index) in windows" :key="index" :index="index">
       <template #window>
         <portfolio
           v-if="window.window === 'portfolio'"

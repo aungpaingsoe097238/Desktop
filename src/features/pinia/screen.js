@@ -14,16 +14,20 @@ export const useScreenStore = defineStore("screen", () => {
    */
   const setWindow = (window, data, index) => {
     const findExistingWindow = windows.value.find((el) => el.window === window);
+    let totalZIndex = 0;
+    for (const window of windows.value) {
+      totalZIndex += window.zIndex;
+    }
     if (!findExistingWindow) {
       windows.value.push({
         window: window,
         data: data,
-        x: 40,
+        x: 100,
         y: 40,
-        zIndex: 0,
+        zIndex: totalZIndex,
       });
     } else {
-      findExistingWindow.zIndex = findExistingWindow.zIndex + 1;
+      findExistingWindow.zIndex = totalZIndex + 10;
     }
   };
 
@@ -43,11 +47,24 @@ export const useScreenStore = defineStore("screen", () => {
     currentWindow.y = y;
   };
 
+  /**
+   * increse zindex
+   */
+  const increseZindex = (window) => {
+    const findExistingWindow = windows.value.find((el) => el.window === window);
+    let totalZIndex = 0;
+    for (const window of windows.value) {
+      totalZIndex += window.zIndex;
+    }
+    findExistingWindow.zIndex = totalZIndex + 10;
+  };
+
   return {
     windows,
     getWindows,
     setWindow,
     removeWidow,
     changeXY,
+    increseZindex,
   };
 });

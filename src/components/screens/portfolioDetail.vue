@@ -13,18 +13,20 @@ const data = computed(() => {
     (window) => window.window === `portfolio-detail${index}`
   );
 });
+
 </script>
 
 <template>
   <div
-    class="w-[150vh] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-red-600"
+    @click="screenStore.increseZindex(`portfolio-detail${index}`)"
+    class="w-[60vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-red-600"
   >
     <windowHeader
       :title="`${data.data.name}`"
       :window="`portfolio-detail${index}`"
     ></windowHeader>
     <div>
-      {{ data.data.name }}
+      {{ data }}
     </div>
   </div>
 </template>

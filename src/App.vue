@@ -16,4 +16,8 @@ import Header from './components/common/Header.vue'
   background-image: url('./assets/images/webbg-light.jpg');
   position: fixed;
 }
+
+*{
+  font-family: 'game';
+}
 </style>

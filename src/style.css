@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "game"; /* Font family name for reference */
+  src: url("../src/assets/fonts/DeterminationMonoWebRegular-Z5oq.ttf") format("truetype"); /* Path to the font file */
+}
