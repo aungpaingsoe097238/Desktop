@@ -21,7 +21,7 @@ const handleShowPortfolioDetail = (folder, index) => {
 
 <template>
   <div
-  @click="screenStore.increseZindex('portfolio')"
+    @click="screenStore.increseZindex('portfolio')"
     class="w-[50vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
   >
     <windowHeader title="Portfolio" window="portfolio"></windowHeader>

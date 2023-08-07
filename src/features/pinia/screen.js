@@ -12,9 +12,9 @@ export const useScreenStore = defineStore("screen", () => {
   /**
    * added windows
    */
-  const setWindow = (window, data, index) => {
+  const setWindow = (window, data) => {
+    console.log(data);
     const findExistingWindow = windows.value.find((el) => el.window === window);
-    let totalZIndex = 0;
     for (const window of windows.value) {
       totalZIndex += window.zIndex;
     }
