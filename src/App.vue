@@ -13,8 +13,9 @@ import Header from './components/common/Header.vue'
 .app {
   width: 100%;
   height: 100vh;
-  background-image: url('./assets/images/webbg-light.jpg');
+  background-image: url('./assets/images/background.png');
   position: fixed;
+  background-size: cover;
 }
 
 *{

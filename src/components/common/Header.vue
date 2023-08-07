@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full fixed top-0 py-2 bg-red-600 text-white">
+  <nav class="w-full fixed top-0 py-3 bg-primary text-white">
     <div class="w-[90%] mx-auto flex items-center justify-between">
       <div class="text-xl font-bold">Menu</div>
       <div class="text-xl font-bold">{{ currentDateTime }}</div>

@@ -19,14 +19,23 @@ const data = computed(() => {
 <template>
   <div
     @click="screenStore.increseZindex(`portfolio-detail${index}`)"
-    class="w-[60vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-red-600"
+    class="w-[60vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
   >
     <windowHeader
       :title="`${data.data.name}`"
       :window="`portfolio-detail${index}`"
     ></windowHeader>
-    <div>
-      {{ data }}
+    <div class="h-[70vh] overflow-auto">
+      <img
+        src="../../assets/images/img1.jpg"
+        class="w-full"
+        alt=""
+      />
+      <img
+        src="../../assets/images/img2.jpg"
+        class="w-full"
+        alt=""
+      />
     </div>
   </div>
 </template>

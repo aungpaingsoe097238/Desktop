@@ -16,9 +16,9 @@ const { x, y, style } = useDraggable(el, {
     ref="el"
     :style="style"
     style="position: fixed"
-    class="bg-white border-2 border-e-4 border-b-4 py-4 px-9 border-red-600 rounded-xl"
+    class="bg-white border-2 border-e-4 border-b-4 py-4 px-9 border-primary rounded-xl"
   >
-    <div class="text-red-600 text-2xl flex flex-col gap-4">
+    <div class="text-primary text-2xl flex flex-col gap-4">
       <div class="flex justify-center items-center gap-2">
         <star />
         <div>Read Me</div>

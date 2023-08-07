@@ -31,29 +31,29 @@ const showPortfolioDetail = (data) => {
     <div class="w-[90%] mx-auto h-screen flex justify-end">
       <div class="flex flex-col gap-2 mt-5">
         <div
-          class="flex flex-col text-center justify-center gap-2 hover:bg-slate-200 p-2 cursor-pointer"
+          class="flex flex-col text-center justify-center gap-2 hover:bg-desktopHover p-2 cursor-pointer"
           @click="handleShowWindow('portfolio')"
         >
           <img
-            src="../assets/images/porpleicon1-p-500.png"
+            src="../assets/images/pc.png"
             class="w-[60px] mx-auto"
             alt=""
           />
-          <div class="px-3 bg-slate-100 text-rose-700">Portfolio</div>
+          <div class="px-3 bg-white text-primary">Portfolio</div>
         </div>
         <div
-          class="flex flex-col text-center justify-center gap-2 hover:bg-slate-200 p-2 cursor-pointer"
+          class="flex flex-col text-center justify-center gap-2 hover:bg-desktopHover p-2 cursor-pointer"
           @click="handleShowWindow('about')"
         >
           <img
-            src="../assets/images/porpleicon1-p-500.png"
+            src="../assets/images/about-txt.png"
             class="w-[60px] mx-auto"
             alt=""
           />
-          <div class="px-3 bg-slate-100 text-rose-700">About</div>
+          <div class="px-3 bg-white text-primary">about.txt</div>
         </div>
         <div
-          class="flex flex-col text-center justify-center gap-2 hover:bg-slate-200 p-2 cursor-pointer"
+          class="flex flex-col text-center justify-center gap-2 hover:bg-desktopHover p-2 cursor-pointer"
           @click="handleShowWindow('skill')"
         >
           <img
@@ -61,10 +61,10 @@ const showPortfolioDetail = (data) => {
             class="w-[60px] mx-auto"
             alt=""
           />
-          <div class="px-3 bg-slate-100 text-rose-700">Skill</div>
+          <div class="px-3 bg-white text-primary">Skill</div>
         </div>
         <div
-          class="flex flex-col text-center justify-center gap-2 hover:bg-slate-200 p-2 cursor-pointer"
+          class="flex flex-col text-center justify-center gap-2 hover:bg-desktopHover p-2 cursor-pointer"
           @click="handleShowWindow('contact')"
         >
           <img
@@ -72,7 +72,7 @@ const showPortfolioDetail = (data) => {
             class="w-[60px] mx-auto"
             alt=""
           />
-          <div class="px-3 bg-slate-100 text-rose-700">Contact</div>
+          <div class="px-3 bg-white text-primary">Contact</div>
         </div>
       </div>
     </div>

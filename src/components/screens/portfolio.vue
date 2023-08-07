@@ -21,7 +21,8 @@ const handleShowPortfolioDetail = (folder, index) => {
 
 <template>
   <div
-    class="w-[50vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-red-600"
+  @click="screenStore.increseZindex('portfolio')"
+    class="w-[50vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
   >
     <windowHeader title="Portfolio" window="portfolio"></windowHeader>
     <div class="flex justify-center my-4">
@@ -32,15 +33,15 @@ const handleShowPortfolioDetail = (folder, index) => {
         @click="$emit('portfolioDetail', { folder: folder, index: index })"
       >
         <div
-          class="text-center hover:bg-gray-100 m-2"
+          class="text-center hover:bg-hover m-2"
           @click="handleShowPortfolioDetail(folder, index)"
         >
           <img
-            src="../../assets/images/porpleicon4.png"
+            src="../../assets/images/folder.png"
             class="h-[80px] max-w-full cursor-pointer mx-auto"
             alt=""
           />
-          <div>{{ folder.name }}</div>
+          <div class="text-primary">{{ folder.name }}</div>
         </div>
       </div>
     </div>
