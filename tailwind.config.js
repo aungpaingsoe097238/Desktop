@@ -9,6 +9,7 @@ export default {
       colors: {
         primary: '#CC6B49', 
         secondary: 'rgb(55, 82, 163)', 
+        background: '#ebd1ae',
         hover: '#fff3e5',
         desktopHover: '#FFECE5' 
       },

@@ -59,4 +59,6 @@ onMounted(() => {
   background-color: #CC6B49;
   border-radius: 10px;
 }
+
+
 </style>
