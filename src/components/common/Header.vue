@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full z-40 fixed top-0 py-3 bg-primary text-white">
+  <nav class="w-full fixed top-0 py-3 bg-primary text-white">
     <div class="w-[90%] mx-auto flex items-center justify-between">
       <div class="text-xl font-bold cursor-pointer">
         <div @click="showMenus = !showMenus">Menu</div>

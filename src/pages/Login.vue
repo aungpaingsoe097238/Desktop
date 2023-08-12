@@ -1,21 +1,9 @@
 <script setup>
-import { initializeApp } from "firebase/app";
+import { app } from "../firebase.js";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAKS1uKR-Vdhg_poUn3Sz47h_R8HV84Z8w",
-  authDomain: "fb-testing-4d315.firebaseapp.com",
-  databaseURL: "https://fb-testing-4d315-default-rtdb.firebaseio.com",
-  projectId: "fb-testing-4d315",
-  storageBucket: "fb-testing-4d315.appspot.com",
-  messagingSenderId: "523525819842",
-  appId: "1:523525819842:web:6b827f49670b8e543c5a5b",
-};
-const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-
 const email = ref(null);
 const password = ref(null);
 const router = useRouter();

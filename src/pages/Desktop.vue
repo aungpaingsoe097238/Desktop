@@ -8,8 +8,16 @@ import about from "../components/screens/about.vue";
 import skill from "../components/screens/skill.vue";
 import contact from "../components/screens/contact.vue";
 import info from "../components/reusables/info.vue";
+import { useDataBase } from "../features/pinia/firebaseDatabase";
+import { onMounted } from "vue";
+
 const screenStore = useScreenStore();
+const database = useDataBase();
 const windows = computed(() => screenStore.getWindows);
+
+onMounted(async () => {
+  await database.setAllData("about");
+});
 
 /**
  * added window to store
@@ -34,11 +42,7 @@ const showPortfolioDetail = (data) => {
           class="flex flex-col text-center justify-center gap-2 hover:bg-desktopHover p-2 cursor-pointer"
           @click="handleShowWindow('portfolio')"
         >
-          <img
-            src="../assets/images/pc.png"
-            class="w-[60px] mx-auto"
-            alt=""
-          />
+          <img src="../assets/images/pc.png" class="w-[60px] mx-auto" alt="" />
           <div class="px-3 bg-white text-primary">Portfolio</div>
         </div>
         <div
@@ -85,7 +89,10 @@ const showPortfolioDetail = (data) => {
           v-if="window.window === 'portfolio'"
           @portfolioDetail="showPortfolioDetail"
         ></portfolio>
-        <about v-if="window.window === 'about'"></about>
+        <about
+          v-if="window.window === 'about'"
+          :images="database.getAllData"
+        ></about>
         <skill v-if="window.window === 'skill'"></skill>
         <contact v-if="window.window === 'contact'"></contact>
         <portfolioDetial

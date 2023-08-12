@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-  <div class="flex h-screen overflow-auto justify-end">
-    <div class="w-[20%] fixed left-0 h-screen overflow-auto bg-background">
-      <div class="flex flex-col">
+  <div class="flex h-screen overflow-auto justify-end me-[10%]">
+    <div class="w-[10%] fixed left-0 mt-1 h-screen overflow-auto bg-background">
+      <div class="flex flex-col mt-5">
         <RouterLink
           to="/dashboard-portfolio"
           class="w-full cursor-pointer hover:bg-desktopHover p-2 text-xl"
@@ -38,6 +38,6 @@
 
 <style scoped>
 .router-link-active {
-  background: #CC6B49
+  background: #cc6b49;
 }
 </style>
