@@ -6,7 +6,55 @@ import ReusableSlider from "../../../components/reusables/Sidebar.vue";
   <div>
     <ReusableSlider>
       <template #content>
-        Portfolio
+        <div class="my-5">
+          <table class="w-full text-md text-left bg-white text-black">
+            <thead class="border bg-primary text-white">
+              <tr>
+                <th scope="col" class="px-6 border py-3">#</th>
+                <th scope="col" class="px-6 border py-3">Image</th>
+                <th scope="col" class="px-6 border py-3">Actions</th>
+              </tr>
+            </thead>
+            <!-- <tbody>
+              <tr
+                class="bg-white border-b"
+                v-for="image in database.getSkillData"
+                :key="image.id"
+              >
+                <td class="px-6 border">{{ image.id }}</td>
+                <td class="px-6 border">
+                  <img :src="image.url" class="h-[50px]" alt="" />
+                </td>
+                <td class="px-6 border">
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="cursor-pointer hover:bg-desktopHover"
+                      @click="handleDeleteData(image.id)"
+                    >
+                      Delete
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td
+                  colspan="3"
+                  class="py-3 cursor-pointer hover:bg-desktopHover"
+                  @click="handleChooseImageUi"
+                >
+                  <div class="flex justify-center">added image</div>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    class="hidden"
+                    @change="handleChooseImage"
+                    ref="imageInput"
+                  />
+                </td>
+              </tr>
+            </tbody> -->
+          </table>
+        </div>
       </template>
     </ReusableSlider>
   </div>
