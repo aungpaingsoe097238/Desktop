@@ -12,12 +12,14 @@ import Login from "./pages/Login.vue";
 import DashboardAbout from "./pages/dashboard/about/list.vue";
 import DashboardPortfolio from "./pages/dashboard/portfolio/list.vue";
 import DashboardSkill from "./pages/dashboard/skill/list.vue";
+import DashboardDetail from "./pages/dashboard/portfolio/detail.vue";
 
 const routes = [
   { path: "/", component: Desktop },
   { path: "/login", component: Login },
   { path: "/dashboard-about", component: DashboardAbout },
   { path: "/dashboard-portfolio", component: DashboardPortfolio },
+  { path: "/dashboard-detail", component: DashboardDetail },
   { path: "/dashboard-skill", component: DashboardSkill },
 ];
 

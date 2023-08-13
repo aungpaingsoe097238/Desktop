@@ -4,16 +4,36 @@ import ReusableSlider from "../../../components/reusables/Sidebar.vue";
 import { useStorageStore } from "../../../features/pinia/firebaseStorage";
 import { useDataBase } from "../../../features/pinia/firebaseDatabase";
 import { useRoute } from "vue-router";
+import { app } from "../../../firebase";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  getDocs,
+  query,
+  collection,
+  getDoc,
+  addDoc,
+  runTransaction,
+  deleteDoc,
+} from "firebase/firestore";
 
 const storage = useStorageStore();
+const db = getFirestore(app);
 const database = useDataBase();
 const imageInput = ref(null);
 const imageUrl = ref(null);
 const route = useRoute();
+const currentImageId = ref(0);
+const images = ref([]);
 
 onMounted(async () => {
-  await database.setAllData("about");
-  currentImageId.value = database.getAboutData.length;
+  const q = query(collection(db, route.query.name));
+  const querySnapshot = await getDocs(q);
+  querySnapshot.forEach((doc) => {
+    images.value.push(doc.data());
+  });
+  currentImageId.value = images.value.length;
 });
 
 /**
@@ -37,7 +57,7 @@ const handleChooseImage = async (event) => {
  * Save to Database
  */
 const handleSaveData = async (currentImageId) => {
-  await database.setData("about", `${currentImageId}`, {
+  await database.setData(route.query.name, `${currentImageId}`, {
     id: currentImageId,
     url: imageUrl.value,
   });
@@ -48,7 +68,7 @@ const handleSaveData = async (currentImageId) => {
  * Delete Database
  */
 const handleDeleteData = async (imageId) => {
-  await database.deleteData("about", imageId);
+  await database.deleteData(route.query.name, imageId);
   window.location.href = `${route.fullPath}`;
 };
 </script>
@@ -69,7 +89,7 @@ const handleDeleteData = async (imageId) => {
             <tbody>
               <tr
                 class="bg-white border-b"
-                v-for="image in database.getAboutData"
+                v-for="image in images"
                 :key="image.id"
               >
                 <td class="px-6 border">{{ image.id }}</td>

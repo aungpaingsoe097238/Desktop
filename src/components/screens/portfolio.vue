@@ -1,15 +1,15 @@
 <script setup>
-import { ref } from "vue";
 import windowHeader from "../reusables/windowHeader.vue";
 import { useScreenStore } from "../../features/pinia/screen";
+import { useDataBase } from "../../features/pinia/firebaseDatabase";
+import { onMounted } from "vue";
 
+const database = useDataBase();
 const screenStore = useScreenStore();
-const folders = ref([
-  { name: "FolderOne" },
-  { name: "FolderTwo" },
-  { name: "FolderThree" },
-  { name: "FolderFour" },
-]);
+
+onMounted(async () => {
+  await database.setAllData("portfolio");
+});
 
 /**
  * show portfolio detail
@@ -28,7 +28,7 @@ const handleShowPortfolioDetail = (folder, index) => {
     <div class="flex justify-center my-4">
       <div
         class="basis-1/4"
-        v-for="(folder, index) in folders"
+        v-for="(folder, index) in database.getPortfolioData"
         :key="index"
         @click="$emit('portfolioDetail', { folder: folder, index: index })"
       >

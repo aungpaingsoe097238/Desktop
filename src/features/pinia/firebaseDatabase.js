@@ -19,6 +19,7 @@ export const useDataBase = defineStore("database", () => {
   const data = Ref([]);
   const about = Ref([]);
   const skill = Ref([]);
+  const portfolio = Ref([]);
 
   /**
    * get all data
@@ -29,6 +30,10 @@ export const useDataBase = defineStore("database", () => {
 
   const getAboutData = computed(() => {
     return about.value;
+  });
+
+  const getPortfolioData = computed(() => {
+    return portfolio.value;
   });
 
   const getSkillData = computed(() => {
@@ -58,6 +63,9 @@ export const useDataBase = defineStore("database", () => {
         if (path == "skill") {
           skill.value.push(doc.data());
         }
+        if (path == "portfolio") {
+          portfolio.value.push(doc.data());
+        }
       }
     });
   };
@@ -86,6 +94,7 @@ export const useDataBase = defineStore("database", () => {
     getAllData,
     getAboutData,
     getSkillData,
+    getPortfolioData,
     deleteData,
     editData,
   };
