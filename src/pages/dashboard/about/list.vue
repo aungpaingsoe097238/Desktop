@@ -14,7 +14,7 @@ const route = useRoute();
 
 onMounted(async () => {
   await database.setAllData("about");
-  currentImageId.value = database.getAllData.length;
+  currentImageId.value = database.getAboutData.length;
 });
 
 /**
@@ -70,7 +70,7 @@ const handleDeleteData = async (imageId) => {
             <tbody>
               <tr
                 class="bg-white border-b"
-                v-for="image in database.getAllData"
+                v-for="image in database.getAboutData"
                 :key="image.id"
               >
                 <td class="px-6 border">{{ image.id }}</td>

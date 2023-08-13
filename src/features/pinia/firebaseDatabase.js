@@ -17,12 +17,22 @@ import { ref as Ref, computed } from "vue";
 export const useDataBase = defineStore("database", () => {
   const database = getFirestore(app);
   const data = Ref([]);
+  const about = Ref([]);
+  const skill = Ref([]);
 
   /**
    * get all data
    */
   const getAllData = computed(() => {
     return data.value;
+  });
+
+  const getAboutData = computed(() => {
+    return about.value;
+  });
+
+  const getSkillData = computed(() => {
+    return skill.value;
   });
 
   /**
@@ -42,7 +52,12 @@ export const useDataBase = defineStore("database", () => {
     querySnapshot.forEach((doc) => {
       const findSameData = data.value.find((item) => item === doc.data());
       if (!findSameData) {
-        data.value.push(doc.data());
+        if (path == "about") {
+          about.value.push(doc.data());
+        }
+        if (path == "skill") {
+          skill.value.push(doc.data());
+        }
       }
     });
   };
@@ -64,9 +79,13 @@ export const useDataBase = defineStore("database", () => {
 
   return {
     data,
+    about,
+    skill,
     setAllData,
     setData,
     getAllData,
+    getAboutData,
+    getSkillData,
     deleteData,
     editData,
   };

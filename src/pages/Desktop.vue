@@ -15,8 +15,18 @@ const screenStore = useScreenStore();
 const database = useDataBase();
 const windows = computed(() => screenStore.getWindows);
 
+/**
+ * Load About data
+ */
 onMounted(async () => {
   await database.setAllData("about");
+});
+
+/**
+ * Load About skill
+ */
+onMounted(async () => {
+  await database.setAllData("skill");
 });
 
 /**
@@ -91,9 +101,12 @@ const showPortfolioDetail = (data) => {
         ></portfolio>
         <about
           v-if="window.window === 'about'"
-          :images="database.getAllData"
+          :images="database.getAboutData"
         ></about>
-        <skill v-if="window.window === 'skill'"></skill>
+        <skill
+          v-if="window.window === 'skill'"
+          :images="database.getSkillData"
+        ></skill>
         <contact v-if="window.window === 'contact'"></contact>
         <portfolioDetial
           v-if="window.window === 'portfolio-detail0'"
