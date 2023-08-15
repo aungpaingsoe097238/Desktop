@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+</script>
 
 <template>
   <div class="flex h-screen overflow-auto justify-end me-[10%]">
@@ -7,24 +11,32 @@
         <a
           href="/dashboard-portfolio"
           class="w-full cursor-pointer hover:bg-desktopHover p-2 text-xl"
+          :class="{
+            'bg-desktopHover': route.fullPath === '/dashboard-portfolio',
+          }"
         >
           Portfolio
         </a>
-        <a 
+        <a
           href="/dashboard-about"
           class="w-full cursor-pointer hover:bg-desktopHover p-2 text-xl"
+          :class="{ 'bg-desktopHover': route.fullPath === '/dashboard-about' }"
         >
           About
         </a>
         <a
           href="/dashboard-skill"
           class="w-full cursor-pointer hover:bg-desktopHover p-2 text-xl"
+          :class="{ 'bg-desktopHover': route.fullPath === '/dashboard-skill' }"
         >
           Skill
         </a>
         <a
-          href="/"
+          href="/dashobard-contact"
           class="w-full cursor-pointer hover:bg-desktopHover p-2 text-xl"
+          :class="{
+            'bg-desktopHover': route.fullPath === '/dashboard-contact',
+          }"
         >
           Contact
         </a>

@@ -51,7 +51,7 @@ const handleSaveData = async () => {
                       class="h-[50px]"
                       alt=""
                     />
-                    Folder One
+                    {{ folder.name }}
                   </div>
                 </td>
                 <td class="px-6 border">

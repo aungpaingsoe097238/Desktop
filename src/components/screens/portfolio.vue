@@ -2,14 +2,10 @@
 import windowHeader from "../reusables/windowHeader.vue";
 import { useScreenStore } from "../../features/pinia/screen";
 import { useDataBase } from "../../features/pinia/firebaseDatabase";
-import { onMounted } from "vue";
 
 const database = useDataBase();
 const screenStore = useScreenStore();
 
-onMounted(async () => {
-  await database.setAllData("portfolio");
-});
 
 /**
  * show portfolio detail

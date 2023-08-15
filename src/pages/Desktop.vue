@@ -23,6 +23,15 @@ onMounted(async () => {
 });
 
 /**
+ * Load Portfolio data
+ */
+onMounted(async () => {
+  if (database.getPortfolioData.length === 0) {
+    await database.setAllData("portfolio");
+  }
+});
+
+/**
  * Load About skill
  */
 onMounted(async () => {
@@ -123,6 +132,114 @@ const showPortfolioDetail = (data) => {
         <portfolioDetial
           v-if="window.window === 'portfolio-detail3'"
           index="3"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail4'"
+          index="4"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail5'"
+          index="5"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail6'"
+          index="6"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail7'"
+          index="7"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail8'"
+          index="8"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail9'"
+          index="9"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail10'"
+          index="10"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail11'"
+          index="11"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail12'"
+          index="12"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail13'"
+          index="13"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail14'"
+          index="14"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail15'"
+          index="15"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail16'"
+          index="16"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail17'"
+          index="17"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail18'"
+          index="18"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail19'"
+          index="19"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail20'"
+          index="20"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail21'"
+          index="21"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail22'"
+          index="22"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail23'"
+          index="23"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail24'"
+          index="24"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail25'"
+          index="25"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail26'"
+          index="26"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail27'"
+          index="27"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail28'"
+          index="28"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail29'"
+          index="29"
+        ></portfolioDetial>
+        <portfolioDetial
+          v-if="window.window === 'portfolio-detail30'"
+          index="30"
         ></portfolioDetial>
       </template>
     </draggable>

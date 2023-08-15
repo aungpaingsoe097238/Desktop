@@ -10,6 +10,7 @@ const database = useDataBase();
 const imageInput = ref(null);
 const imageUrl = ref(null);
 const route = useRoute();
+const currentImageId = ref(0);
 
 onMounted(async () => {
   await database.setAllData("about");
