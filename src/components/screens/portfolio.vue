@@ -6,7 +6,6 @@ import { useDataBase } from "../../features/pinia/firebaseDatabase";
 const database = useDataBase();
 const screenStore = useScreenStore();
 
-
 /**
  * show portfolio detail
  */
@@ -17,10 +16,13 @@ const handleShowPortfolioDetail = (folder, index) => {
 
 <template>
   <div
-    @click="screenStore.increseZindex('portfolio')"
     class="w-[50vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
   >
-    <windowHeader title="Portfolio" window="portfolio"></windowHeader>
+    <windowHeader
+      @click="screenStore.increseZindex('portfolio')"
+      title="Portfolio"
+      window="portfolio"
+    ></windowHeader>
     <div class="flex justify-center my-4">
       <div
         class="basis-1/4"

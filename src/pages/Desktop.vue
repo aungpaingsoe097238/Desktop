@@ -69,7 +69,7 @@ const showPortfolioDetail = (data) => {
           @click="handleShowWindow('about')"
         >
           <img
-            src="../assets/images/about-txt.png"
+            src="../assets/images/about.png"
             class="w-[60px] mx-auto"
             alt=""
           />
@@ -80,7 +80,7 @@ const showPortfolioDetail = (data) => {
           @click="handleShowWindow('skill')"
         >
           <img
-            src="../assets/images/porpleicon1-p-500.png"
+            src="../assets/images/skill.png"
             class="w-[60px] mx-auto"
             alt=""
           />
@@ -91,7 +91,7 @@ const showPortfolioDetail = (data) => {
           @click="handleShowWindow('contact')"
         >
           <img
-            src="../assets/images/porpleicon1-p-500.png"
+            src="../assets/images/contact.png"
             class="w-[60px] mx-auto"
             alt=""
           />

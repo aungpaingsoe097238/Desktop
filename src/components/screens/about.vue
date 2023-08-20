@@ -11,17 +11,21 @@ const { images } = defineProps({
 
 <template>
   <div
-    @click="screenStore.increseZindex('about')"
     class="w-[60vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
   >
-    <windowHeader title="about.txt" window="about"></windowHeader>
+    <windowHeader
+      @click="screenStore.increseZindex('about')"
+      title="about.txt"
+      window="about"
+    ></windowHeader>
     <div class="overflow-auto h-[85vh] my-2">
-      <img 
-        v-for="image in images" 
-        :key="image.id" 
-        :src="image.url" 
-        class="w-full" 
-        alt="" />
+      <img
+        v-for="image in images"
+        :key="image.id"
+        :src="image.url"
+        class="w-full"
+        alt=""
+      />
     </div>
   </div>
 </template>

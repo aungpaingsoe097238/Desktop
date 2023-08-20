@@ -4,11 +4,16 @@
       <div class="text-xl font-bold cursor-pointer">
         <div @click="showMenus = !showMenus">Menu</div>
       </div>
-      <div class="text-xl font-bold">{{ currentDateTime }}</div>
+      <div class="text-xl font-bold">
+        <div>{{ currentDateTime }}</div>
+      </div>
     </div>
   </nav>
   <!-- Menu -->
-  <div v-if="showMenus" class="absolute z-40 p-2 top-9 text-xl bg-primary text-white my-5 ms-[4%]">
+  <div
+    v-if="showMenus"
+    class="absolute z-40 p-2 top-9 text-xl bg-primary text-white my-5 ms-[4%]"
+  >
     <div
       class="py-1 px-3 hover:bg-desktopHover hover:text-primary cursor-pointer"
       @click="handleShowWindow('portfolio')"
@@ -33,7 +38,9 @@
     >
       Contact
     </div>
-    <div class="py-1 px-3 hover:bg-desktopHover hover:text-primary cursor-pointer">
+    <div
+      class="py-1 px-3 hover:bg-desktopHover hover:text-primary cursor-pointer"
+    >
       Shutdown
     </div>
   </div>
@@ -84,6 +91,6 @@ onMounted(() => {
  */
 const handleShowWindow = (window, data = null) => {
   screenStore.setWindow(window, data);
-  showMenus.value = false
+  showMenus.value = false;
 };
 </script>

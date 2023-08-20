@@ -12,9 +12,6 @@ export const useScreenStore = defineStore("screen", () => {
   /**
    * added windows
    */
-  /**
-   * added windows
-   */
   const setWindow = (window, data) => {
     let totalZIndex = 0;
     const findExistingWindow = windows.value.find((el) => el.window === window);
@@ -72,6 +69,6 @@ export const useScreenStore = defineStore("screen", () => {
     setWindow,
     removeWidow,
     changeXY,
-    increseZindex,
+    increseZindex
   };
 });

@@ -40,10 +40,10 @@ onMounted(async () => {
 
 <template>
   <div
-    @click="screenStore.increseZindex(`portfolio-detail${index}`)"
     class="w-[60vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
   >
     <windowHeader
+      @click="screenStore.increseZindex(`portfolio-detail${index}`)"
       :title="`${data.data.name}`"
       :window="`portfolio-detail${index}`"
     ></windowHeader>
