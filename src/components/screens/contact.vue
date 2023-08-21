@@ -3,6 +3,12 @@ import windowHeader from "../reusables/windowHeader.vue";
 import { useScreenStore } from "../../features/pinia/screen";
 
 const screenStore = useScreenStore();
+
+const composeEmailLink = () => {
+  const mailtoLink =
+    "mailto:recipient@example.com?subject=Hello&body=This%20is%20the%20email%20body";
+  window.open(mailtoLink);
+};
 </script>
 
 <template>
@@ -26,28 +32,31 @@ const screenStore = useScreenStore();
         <div>
           <div class="flex flex-col gap-3">
             <div class="flex gap-3">
-              <div>
+              <a href="https://www.behance.net/alexlynn3" target="_blank">
                 <img
                   src="../../assets/images/behance.png"
-                  class="w-full"
+                  class="w-full cursor-pointer hover:opacity-80"
                   alt=""
                 />
-              </div>
-              <div>
+              </a>
+              <a href="https://www.figma.com/@alexlynn" target="_blank">
                 <img
                   src="../../assets/images/figma.png"
-                  class="w-full"
+                  class="w-full cursor-pointer hover:opacity-80"
                   alt=""
                 />
-              </div>
+              </a>
             </div>
-            <div>
+            <a
+              href="https://www.linkedin.com/in/lynnhtetthant/"
+              target="_blank"
+            >
               <img
                 src="../../assets/images/Linkedin.png"
-                class="w-full"
+                class="w-full cursor-pointer hover:opacity-80"
                 alt=""
               />
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -56,20 +65,32 @@ const screenStore = useScreenStore();
           <div>
             <img
               src="../../assets/images/nephophile.png"
-              class="w-full"
+              class="w-full cursor-pointer hover:opacity-80"
               alt=""
             />
           </div>
-          <div>
-            <img src="../../assets/images/udemy.png" class="w-full" alt="" />
-          </div>
+          <a href="https://www.udemy.com/user/lynn-htet-7/" target="_blank">
+            <img
+              src="../../assets/images/udemy.png"
+              class="w-full cursor-pointer hover:opacity-80"
+              alt=""
+            />
+          </a>
         </div>
-        <div>
-          <img src="../../assets/images/yangon.png" class="w-full" alt="" />
-        </div>
-        <div>
-          <img src="../../assets/images/email.png" class="w-full" alt="" />
-        </div>
+        <a href="https://goo.gl/maps/2f4fr1SSQ9whHkeK7" target="_blank">
+          <img
+            src="../../assets/images/yangon.png"
+            class="w-full cursor-pointer hover:opacity-80"
+            alt=""
+          />
+        </a>
+        <a :href="composeEmailLink">
+          <img
+            src="../../assets/images/email.png"
+            class="w-full cursor-pointer hover:opacity-80"
+            alt=""
+          />
+        </a>
       </div>
     </div>
   </div>

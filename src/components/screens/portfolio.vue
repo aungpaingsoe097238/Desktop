@@ -23,9 +23,9 @@ const handleShowPortfolioDetail = (folder, index) => {
       title="Portfolio"
       window="portfolio"
     ></windowHeader>
-    <div class="flex justify-center my-4">
+    <div class="flex justify-start flex-wrap my-4">
       <div
-        class="basis-1/4"
+        class="basis-1/5"
         v-for="(folder, index) in database.getPortfolioData"
         :key="index"
         @click="$emit('portfolioDetail', { folder: folder, index: index })"
