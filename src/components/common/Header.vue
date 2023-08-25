@@ -40,6 +40,7 @@
     </div>
     <div
       class="py-1 px-3 hover:bg-desktopHover hover:text-primary cursor-pointer"
+      @click="handleShutdown()"
     >
       Shutdown
     </div>
@@ -93,4 +94,11 @@ const handleShowWindow = (window, data = null) => {
   screenStore.setWindow(window, data);
   showMenus.value = false;
 };
+
+/**
+ * shutdown
+ */
+const handleShutdown = () => {
+  window.location.href = '/'
+}
 </script>
