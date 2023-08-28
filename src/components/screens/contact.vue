@@ -1,10 +1,7 @@
 <script setup>
 import windowHeader from "../reusables/windowHeader.vue";
 import { useScreenStore } from "../../features/pinia/screen";
-
 const screenStore = useScreenStore();
-
-
 </script>
 
 <template>

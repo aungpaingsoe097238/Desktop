@@ -1,6 +1,6 @@
 <script setup>
-import windowheader from "../reusables/windowheader.vue";
 import { useScreenStore } from "../../features/pinia/screen";
+import windowheader from "../reusables/windowHeader.vue";
 import { defineProps } from "vue";
 const screenStore = useScreenStore();
 
