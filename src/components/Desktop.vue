@@ -55,6 +55,7 @@ const showPortfolioDetail = (data) => {
 
 <template>
   <div>
+    
     <div class="w-[90%] mx-auto h-screen flex justify-end">
       <div class="flex flex-col gap-2 mt-5">
         <div
@@ -243,5 +244,6 @@ const showPortfolioDetail = (data) => {
         ></portfolioDetial>
       </template>
     </draggable>
+
   </div>
 </template>

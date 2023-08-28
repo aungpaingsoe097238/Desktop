@@ -40,7 +40,7 @@ onMounted(async () => {
 
 <template>
   <div
-    class="w-[60vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
+    class="w-screen lg:w-[50vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
   >
     <windowHeader
       @click="screenStore.increseZindex(`portfolio-detail${index}`)"

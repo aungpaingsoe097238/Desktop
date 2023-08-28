@@ -16,7 +16,7 @@ const handleShowPortfolioDetail = (folder, index) => {
 
 <template>
   <div
-    class="w-[50vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
+    class="w-screen lg:w-[50vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
   >
     <windowHeader
       @click="screenStore.increseZindex('portfolio')"
@@ -25,7 +25,7 @@ const handleShowPortfolioDetail = (folder, index) => {
     ></windowHeader>
     <div class="flex justify-start flex-wrap my-4">
       <div
-        class="basis-1/5"
+        class=" basis-1/3 lg:basis-1/5"
         v-for="(folder, index) in database.getPortfolioData"
         :key="index"
         @click="$emit('portfolioDetail', { folder: folder, index: index })"
@@ -39,7 +39,7 @@ const handleShowPortfolioDetail = (folder, index) => {
             class="h-[80px] max-w-full cursor-pointer mx-auto"
             alt=""
           />
-          <div class="text-primary">{{ folder.name }}</div>
+          <div class="text-primary tracking-tighter">{{ folder.name }}</div>
         </div>
       </div>
     </div>

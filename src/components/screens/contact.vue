@@ -4,16 +4,12 @@ import { useScreenStore } from "../../features/pinia/screen";
 
 const screenStore = useScreenStore();
 
-const composeEmailLink = () => {
-  const mailtoLink =
-    "mailto:recipient@example.com?subject=Hello&body=This%20is%20the%20email%20body";
-  window.open(mailtoLink);
-};
+
 </script>
 
 <template>
   <div
-    class="w-[60vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
+    class="w-screen lg:w-[60vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
   >
     <windowHeader
       @click="screenStore.increseZindex('contact')"
@@ -84,7 +80,7 @@ const composeEmailLink = () => {
             alt=""
           />
         </a>
-        <a :href="composeEmailLink">
+        <a href="mailto:alexlynn@naver.com">
           <img
             src="../../assets/images/email.png"
             class="w-full cursor-pointer hover:opacity-80"

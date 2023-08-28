@@ -1,5 +1,5 @@
 <script setup>
-import windowHeader from "../reusables/windowHeader.vue";
+import windowheader from "../reusables/windowheader.vue";
 import { useScreenStore } from "../../features/pinia/screen";
 import { defineProps } from "vue";
 const screenStore = useScreenStore();
@@ -11,14 +11,14 @@ const { images } = defineProps({
 
 <template>
   <div
-    class="w-[60vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
+    class="w-screen lg:w-[50vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
   >
-    <windowHeader
+    <windowheader
       @click="screenStore.increseZindex('about')"
       title="about.txt"
       window="about"
-    ></windowHeader>
-    <div class="overflow-auto h-[85vh] my-2">
+    ></windowheader>
+    <div class="overflow-auto h-[80vh] my-2">
       <img
         v-for="image in images"
         :key="image.id"
