@@ -1,26 +1,29 @@
 <script setup>
 import { app } from "../firebase.js";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useAuthStore } from "../features/pinia/auth.js";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 const auth = getAuth(app);
 const email = ref(null);
 const password = ref(null);
 const router = useRouter();
+const authStore = useAuthStore();
 
 const handleLogin = () => {
   signInWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
       const user = userCredential.user;
       if (user.accessToken) {
+        authStore.setAuth(true);
         router.push("/dashboard-portfolio");
-        (email.value = null), (password.value = null);
       }
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       router.push("/login");
+      authStore.setAuth(false);
     });
 };
 </script>
