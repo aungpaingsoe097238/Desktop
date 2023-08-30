@@ -53,7 +53,11 @@ const showPortfolioDetail = (data) => {
 </script>
 
 <template>
+  <div class="  text-[12px] text-center bg-white text-primary ">
+    For better performance, please view using computer
+  </div>
   <div class="mx-auto flex justify-end">
+
     <div
       class="w-full bg-white border-2 border-e-4 border-b-4 flex justify-center items-center p-2 border-primary rounded-xl mt-4 ms-1 me-1"
     >
