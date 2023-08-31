@@ -22,6 +22,14 @@ const handleSaveData = async () => {
   });
   window.location.href = `${route.fullPath}`;
 };
+
+/**
+ * Delete Database
+ */
+const handleDeleteData = async (folderId) => {
+  await database.deleteData("portfolio", folderId);
+  window.location.href = `${route.fullPath}`;
+};
 </script>
 
 <template>
@@ -62,7 +70,10 @@ const handleSaveData = async () => {
                     >
                       Edit
                     </a>
-                    <div class="cursor-pointer hover:bg-desktopHover">
+                    <div
+                      class="cursor-pointer hover:bg-desktopHover"
+                      @click="handleDeleteData(folder.id)"
+                    >
                       Delete
                     </div>
                   </div>
