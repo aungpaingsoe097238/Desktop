@@ -2,6 +2,11 @@
 import { useRoute } from "vue-router";
 
 const route = useRoute();
+
+const handleLogout = () => {
+  localStorage.removeItem("token");
+  window.location.href = "/";
+};
 </script>
 
 <template>
@@ -40,6 +45,12 @@ const route = useRoute();
         >
           Contact
         </a>
+        <div
+          class="border border-primary rounded-md p-2 m-2 text-xl hover:bg-primary cursor-pointer"
+          @click="handleLogout()"
+        >
+          Logout
+        </div>
       </div>
     </div>
     <div class="w-[80%] ps-3">

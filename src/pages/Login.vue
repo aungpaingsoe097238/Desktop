@@ -16,6 +16,7 @@ const handleLogin = () => {
       const user = userCredential.user;
       if (user.accessToken) {
         authStore.setAuth(true);
+        localStorage.setItem('token',user.accessToken)
         router.push("/dashboard-portfolio");
       }
     })

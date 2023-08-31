@@ -3,21 +3,20 @@ import { ref, onMounted } from "vue";
 import ReusableSlider from "../../../components/reusables/Sidebar.vue";
 import { useDataBase } from "../../../features/pinia/firebaseDatabase";
 import { useRoute } from "vue-router";
+import { v4 as uuidv4 } from 'uuid';
 
 const database = useDataBase();
-const currentId = ref(0);
 const folderName = ref(null);
 const route = useRoute();
+const uuid = uuidv4();
 
 onMounted(async () => {
   await database.setAllData("portfolio");
-  currentId.value = database.getPortfolioData.length;
 });
 
 const handleSaveData = async () => {
-  currentId.value++;
-  await database.setData("portfolio", `${currentId.value}`, {
-    id: currentId.value,
+  await database.setData("portfolio", `${uuid}`, {
+    id: uuid,
     name: folderName.value,
   });
   window.location.href = `${route.fullPath}`;
