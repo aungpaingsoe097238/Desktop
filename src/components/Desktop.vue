@@ -100,7 +100,7 @@ const showPortfolioDetail = (data) => {
       </div>
 
       <div class="text-black fixed bottom-1 start-5">
-        <span class="italic">Power By</span
+        <span class="italic">Development By</span
         ><a href="https://aunglay.onrender.com/"
         target="_black"
         class="cursor-pointer text-primary hover:text-hover">
