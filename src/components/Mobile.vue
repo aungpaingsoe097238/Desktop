@@ -68,11 +68,11 @@ const showPortfolioDetail = (data) => {
           <star />
         </div>
         <div class="flex flex-col gap-3">
-          <div>Hi, My name is Alex Lynn.</div>
+          <div>Hi, My name is Aung Paing Soe.</div>
           <div>
-            A <span class="text-blue-900">UI/UX Desinger & Instructor</span>
+            A <span class="text-blue-900">Full-Stack Web Developer</span>
           </div>
-          <div>Desinger based in Myanmar.</div>
+          <div>Developer based in Myanmar.</div>
           <div>Reach out to discuss on projects!</div>
         </div>
       </div>

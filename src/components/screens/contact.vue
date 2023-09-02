@@ -25,28 +25,28 @@ const screenStore = useScreenStore();
         <div>
           <div class="flex flex-col gap-3">
             <div class="flex gap-3">
-              <a href="https://www.behance.net/alexlynn3" target="_blank">
+              <a href="https://www.facebook.com/aung.p.soe.5437" target="_blank">
                 <img
-                  src="../../assets/images/behance.png"
-                  class="w-full cursor-pointer hover:opacity-80"
+                  src="../../assets/images/facebook.png"
+                  class="w-full cursor-pointer hover:opacity-80 rounded-lg border-primary border"
                   alt=""
                 />
               </a>
-              <a href="https://www.figma.com/@alexlynn" target="_blank">
+              <a href="https://github.com/aungpaingsoe097238" target="_blank">
                 <img
-                  src="../../assets/images/figma.png"
-                  class="w-full cursor-pointer hover:opacity-80"
+                  src="../../assets/images/github.png"
+                  class="w-full cursor-pointer hover:opacity-80 rounded-lg border border-primary"
                   alt=""
                 />
               </a>
             </div>
             <a
-              href="https://www.linkedin.com/in/lynnhtetthant/"
+              href="https://www.linkedin.com/in/aungpaingsoe097238"
               target="_blank"
             >
               <img
                 src="../../assets/images/Linkedin.png"
-                class="w-full cursor-pointer hover:opacity-80"
+                class="w-full cursor-pointer hover:opacity-80 border border-primary rounded-lg"
                 alt=""
               />
             </a>
@@ -55,17 +55,10 @@ const screenStore = useScreenStore();
       </div>
       <div class="flex gap-3">
         <div class="flex flex-col gap-3">
-          <div>
+          <a href="https://www.instagram.com/aung.p.soe.532/" target="_blank">
             <img
-              src="../../assets/images/nephophile.png"
-              class="w-full cursor-pointer hover:opacity-80"
-              alt=""
-            />
-          </div>
-          <a href="https://www.udemy.com/user/lynn-htet-7/" target="_blank">
-            <img
-              src="../../assets/images/udemy.png"
-              class="w-full cursor-pointer hover:opacity-80"
+              src="../../assets/images/instagram.png"
+              class="w-full cursor-pointer hover:opacity-80 border border-primary rounded-lg"
               alt=""
             />
           </a>
@@ -73,11 +66,11 @@ const screenStore = useScreenStore();
         <a href="https://goo.gl/maps/2f4fr1SSQ9whHkeK7" target="_blank">
           <img
             src="../../assets/images/yangon.png"
-            class="w-full cursor-pointer hover:opacity-80"
+            class="w-full cursor-pointer hover:opacity-80 border border-primary rounded-lg"
             alt=""
           />
         </a>
-        <a href="mailto:alexlynn@naver.com">
+        <a href="mailto:aungpaingsoe097238@gmail.com">
           <img
             src="../../assets/images/email.png"
             class="w-full cursor-pointer hover:opacity-80"
