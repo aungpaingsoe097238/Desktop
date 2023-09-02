@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAKS1uKR-Vdhg_poUn3Sz47h_R8HV84Z8w",
-  authDomain: "fb-testing-4d315.firebaseapp.com",
-  databaseURL: "https://fb-testing-4d315-default-rtdb.firebaseio.com",
-  projectId: "fb-testing-4d315",
-  storageBucket: "fb-testing-4d315.appspot.com",
-  messagingSenderId: "523525819842",
-  appId: "1:523525819842:web:6b827f49670b8e543c5a5b",
+  apiKey: "AIzaSyAWCfFV1wT4ghgBKy42MLx_SPBPXX4Rgug",
+  authDomain: "portfolio-d2e2c.firebaseapp.com",
+  databaseURL: "https://portfolio-d2e2c-default-rtdb.firebaseio.com",
+  projectId: "portfolio-d2e2c",
+  storageBucket: "portfolio-d2e2c.appspot.com",
+  messagingSenderId: "494212111153",
+  appId: "1:494212111153:web:0b50c6e178bab976d7ee10",
+  measurementId: "G-SP24KZSMTZ"
 };
 
 export const app = initializeApp(firebaseConfig);
