@@ -7,7 +7,7 @@ const firebaseConfig = {
   projectId: "fb-testing-4d315",
   storageBucket: "fb-testing-4d315.appspot.com",
   messagingSenderId: "523525819842",
-  appId: "1:523525819842:web:6b827f49670b8e543c5a5b"
+  appId: "1:523525819842:web:6b827f49670b8e543c5a5b",
 };
 
 export const app = initializeApp(firebaseConfig);
