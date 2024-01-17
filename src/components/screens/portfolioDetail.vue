@@ -39,17 +39,24 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div
-    class="w-screen lg:w-[50vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary"
-  >
-    <windowHeader
-      @click="screenStore.increseZindex(`portfolio-detail${index}`)"
-      :title="`${data.data.name}`"
-      :window="`portfolio-detail${index}`"
-    ></windowHeader>
-    <div class="h-[70vh] overflow-auto">
-      <div v-for="image in images" :key="image.id">
-        <img :src="image.url" class="w-full" alt="" />
+  <div class="w-screen lg:w-[70vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary">
+    <windowHeader @click="screenStore.increseZindex(`portfolio-detail${index}`)" :title="`${data.data.name}`"
+      :window="`portfolio-detail${index}`"></windowHeader>
+    <div class="h-[80vh] overflow-auto">
+      <div class="p-3">
+        <div class="text-3xl">{{ data.data.name }}</div>
+        <div class="my-5">
+          <img :src="data.data.image" class=" w-full md:w-[95%] md:mx-auto border border-primary" />
+        </div>
+        <div class="my-10">
+          Description: {{ data.data.desc }}
+        </div>
+        <div class="my-10">
+          <video :src="data.data.video" class=" w-full md:w-[95%] md:mx-auto border border-primary" controls />
+        </div>
+        <div>
+          Technologies: {{ data.data.techs }}
+        </div>
       </div>
     </div>
   </div>

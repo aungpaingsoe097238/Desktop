@@ -22,7 +22,7 @@ export const useScreenStore = defineStore("screen", () => {
       windows.value.push({
         window: window,
         data: data,
-        x: 300,
+        x: 200,
         y: 40,
         zIndex: totalZIndex,
       });
