@@ -8,6 +8,7 @@ const database = useDataBase();
 const screenStore = useScreenStore();
 const portfolios = ref([
   {
+    'folder_name' : "Coursia",
     'name': "Coursia - Online Learning Platform",
     "image": "/portfolio/coursia/image1.png",
     "video": "/portfolio/coursia/coursia.webm",
@@ -19,6 +20,7 @@ const portfolios = ref([
     "link": 'https://demo.coursia.ai'
   },
   {
+    'folder_name' : "Winfinance",
     'name': "Winfinance - Loan Management System ( Microfinance )",
     "image": "/portfolio/winfinance/image.jpg",
     "video": "/portfolio/winfinance/winf.webm",
@@ -28,6 +30,7 @@ const portfolios = ref([
     'link': 'https://play.google.com/store/apps/details?id=mm.com.winfinance.app&pcampaignid=web_share'
   },
   {
+    'folder_name' : "SoulKingDom",
     "name": "SoulKingDom - Movies Platform",
     "image": "/portfolio/soulking/image.png",
     "video": "/portfolio/soulking/soulking.webm",
@@ -36,6 +39,7 @@ const portfolios = ref([
     "link": "https://soulkingdom.net"
   },
   {
+    'folder_name' : "PetHeaven",
     "name": "Pet Heaven - Pet Adopting Website",
     "image": "/portfolio/pet/pet.png",
     "video": "/portfolio/pet/pet.webm",
@@ -44,6 +48,7 @@ const portfolios = ref([
     "link": "https://pet-uwn7.onrender.com"
   },
   {
+    'folder_name' : "ELG",
     "name": "ELG - Online Learning Platform",
     "image": "/portfolio/elg/elg.png",
     "video": "/portfolio/elg/elg.webm",
@@ -70,7 +75,7 @@ const handleShowPortfolioDetail = (folder, index) => {
         @click="$emit('portfolioDetail', { folder: folder, index: index })">
         <div class="text-center hover:bg-hover m-2" @click="handleShowPortfolioDetail(folder, index)">
           <img src="../../assets/images/folder.png" class="h-[80px] max-w-full cursor-pointer mx-auto" alt="" />
-          <div class="text-primary tracking-tighter">{{ folder.name }}</div>
+          <div class="text-primary tracking-tighter">{{ folder.folder_name }}</div>
         </div>
       </div>
     </div>
