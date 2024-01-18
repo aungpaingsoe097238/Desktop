@@ -46,16 +46,21 @@ onMounted(async () => {
       <div class="p-3">
         <div class="text-3xl">{{ data.data.name }}</div>
         <div class="my-5">
-          <img :src="data.data.image" class=" w-full md:w-[95%] md:mx-auto border border-primary" />
-        </div>
-        <div class="my-10">
           Description: {{ data.data.desc }}
-        </div>
-        <div class="my-10">
-          <video :src="data.data.video" class=" w-full md:w-[95%] md:mx-auto border border-primary" controls />
         </div>
         <div>
           Technologies: {{ data.data.techs }}
+        </div>
+        <div class=" mt-3 ">
+          Link: <a :href="data.data.link" class=" cursor-pointer text-blue-500 underline" target="_blank">{{ data.data.link }}</a>
+        </div>
+        <div class="my-10 flex gap-3">
+          <div class=" basis-1/2 ">
+            <img :src="data.data.image" class=" border border-primary" />
+          </div>
+          <div class=" basis-1/2 ">
+            <video :src="data.data.video" class="border border-primary" controls />
+          </div>
         </div>
       </div>
     </div>
