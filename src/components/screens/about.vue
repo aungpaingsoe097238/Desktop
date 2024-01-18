@@ -10,24 +10,24 @@ const { images } = defineProps({
 </script>
 
 <template>
-  <div class="w-screen lg:w-[70vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary">
+  <div class="w-screen lg:w-[50vw] p-2 rounded-lg bg-white border-2 border-e-4 border-b-4 border-primary">
     <windowheader @click="screenStore.increseZindex('about')" title="about.txt" window="about"></windowheader>
     <div class="overflow-auto max-h-[80vh] my-2">
-      <div class=" flex flex-col gap-5 text-xl ">
-        <div class=" text-4xl uppercase ">
+      <div class=" flex flex-col gap-3 text-xl ">
+        <div class=" text-2xl uppercase ">
           Aung Paing Soe @alpha
         </div>
-        <div class=" text-3xl ">
+        <div class=" text-2xl ">
           Profile
         </div>
         <div class=" opacity-70 ">
           With over 2+ years of experience in both back-end and front-end development, I specialize in creating responsive
           designs and real-time applications. I also have expertise in server deployment, and I'm a quick learner.
         </div>
-        <div class=" text-4xl ">
+        <div class=" text-2xl mt-4 ">
           Working Experience
         </div>
-        <div class=" text-3xl ">
+        <div class=" text-xl mt-3 ">
           Full-Stack Developer
         </div>
         <div>
@@ -37,7 +37,7 @@ const { images } = defineProps({
           UMG Myanmar
         </diV>
         <div>
-          <ul class=" text-md opacity-70 ">
+          <ul class=" opacity-70 ">
             <li>
               - Spearheading the development and maintenance of both web back-end and front-end systems.
             </li>
@@ -58,7 +58,7 @@ const { images } = defineProps({
             </li>
           </ul>
         </div>
-        <div class=" text-3xl ">
+        <div class=" text-xl mt-3 ">
           Junior Web Developer
         </div>
         <div>
@@ -68,7 +68,7 @@ const { images } = defineProps({
           Marathon Myanmar
         </diV>
         <div>
-          <ul class=" text-md opacity-70 ">
+          <ul class=" opacity-70 ">
             <li>
               - Overseeing the maintenance of one or more e-commerce platforms.
             </li>
@@ -77,7 +77,7 @@ const { images } = defineProps({
             </li>
           </ul>
         </div>
-        <div class=" text-3xl ">
+        <div class=" text-xl mt-3 ">
           IT Assistant
         </div>
         <div>
@@ -87,7 +87,7 @@ const { images } = defineProps({
           Marathon Myanmar
         </diV>
         <div>
-          <ul class=" text-md opacity-70 ">
+          <ul class=" opacity-70 ">
             <li>
               - Overseeing the maintenance of one or more e-commerce platforms.
             </li>
