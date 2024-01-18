@@ -8,7 +8,7 @@ const database = useDataBase();
 const screenStore = useScreenStore();
 const portfolios = ref([
   {
-    'name': "Coursia",
+    'name': "Coursia - Online Learning Platform",
     "image": "/portfolio/coursia/image1.png",
     "video": "/portfolio/coursia/coursia.webm",
     "desc": `Udmey Style Video Learning Platform တစ်ခုဖြစ်ပါသည်။ဒီ Project မှာ Back-End အတွက် Laravel နှင့် Front-End အတွက် Vue.js, Nuxt.js တို့ကို
@@ -19,7 +19,7 @@ const portfolios = ref([
     "link": 'https://demo.coursia.ai'
   },
   {
-    'name': "Winfinance",
+    'name': "Winfinance - Loan Management System ( Microfinance )",
     "image": "/portfolio/winfinance/image.jpg",
     "video": "/portfolio/winfinance/winf.webm",
     "desc": `Loan Management Platform project တစ်ခုဖြစ်ပါသည်။ဒီ Project မှာ Front-End ကော Back-End ကောကိုတာ၀န်ယူ Maintain လုပ်ခဲ့ရပါသည်။
@@ -28,7 +28,7 @@ const portfolios = ref([
     'link': 'https://play.google.com/store/apps/details?id=mm.com.winfinance.app&pcampaignid=web_share'
   },
   {
-    "name": "SoulKingDom",
+    "name": "SoulKingDom - Movies Platform",
     "image": "/portfolio/soulking/image.png",
     "video": "/portfolio/soulking/soulking.webm",
     "desc": `ဒီ Project မှာ Front-End ပိုင်းကိုသာတာ၀န်ယူ Maintain လုပ်ခဲ့ပါတယ်။လက်ရှိတော့ Go Live မှာပါ။`,
@@ -36,7 +36,7 @@ const portfolios = ref([
     "link": "https://soulkingdom.net"
   },
   {
-    "name": "Pet Heaven",
+    "name": "Pet Heaven - Pet Adopting Website",
     "image": "/portfolio/pet/pet.png",
     "video": "/portfolio/pet/pet.webm",
     "desc": `SG ကကျောင်းသူတစ်ယောက်အတွက် ရေးပေးခဲ့သော Static Site တစ်ခုဖြစ်ပါသည်။ Ui only ပါ။`,
@@ -44,11 +44,10 @@ const portfolios = ref([
     "link": "https://pet-uwn7.onrender.com"
   },
   {
-    "name": "ELG",
+    "name": "ELG - Online Learning Platform",
     "image": "/portfolio/elg/elg.png",
     "video": "/portfolio/elg/elg.webm",
     "desc": `Online Video Learning Platform ဖြစ်ပြီး ္Profile Site, User Site, Admin Panel သုံးခုလုံးကိုတာ၀န်ယူရေးသားထားသော Project ဖြစ်သည်။
-     API ပိုင်းကိုတော့ပါ၀င်ရေးသားခဲ့ခြင်းမရှိပါ။   
     `,
     "techs": `Vue, PrimeVue, BootStrap, TailWind, Laravel, MySQL, AWS S3`,
     "link": "https://demo.eglearningguide.com"
