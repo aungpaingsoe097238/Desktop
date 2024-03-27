@@ -1,7 +1,33 @@
-# Vue 3 + Vite
+<div align='center'>
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<h4> <a href=https://alphacoder.onrender.com/>View Demo</a> <span> · </span> <a href="https://github.com/Aung Paing Soe/portfolio-desktop/blob/master/README.md"> Documentation </a> <span> · </span> <a href="https://github.com/Aung Paing Soe/portfolio-desktop/issues"> Report Bug </a> <span> · </span> <a href="https://github.com/Aung Paing Soe/portfolio-desktop/issues"> Request Feature </a> </h4>
 
-## Recommended IDE Setup
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+</div>
+
+# :notebook_with_decorative_cover: Table of Contents
+
+- [About the Project](#star2-about-the-project)
+
+
+## :star2: About the Project
+### :space_invader: Tech Stack
+<details> <summary>Client</summary> <ul>
+<li><a href="">vue</a></li>
+<li><a href="">vueuse</a></li>
+<li><a href="">tailwindcss</a></li>
+<li><a href="">firebase</a></li>
+</ul> </details>
+
+## :toolbox: Getting Started
+
+### :gear: Installation
+
+Install packages
+```bash
+npm install
+```
+running with development server
+```bash
+npm run dev
+```
